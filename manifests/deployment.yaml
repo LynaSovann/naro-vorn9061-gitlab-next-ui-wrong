@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: naro-vorn9061-gitlab-next-ui-wrong-deployment
+  labels:
+    app: naro-vorn9061-gitlab-next-ui-wrong
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: naro-vorn9061-gitlab-next-ui-wrong
+  template:
+    metadata:
+      labels:
+        app: naro-vorn9061-gitlab-next-ui-wrong
+    spec:
+      containers:
+        - name: naro-vorn9061-gitlab-next-ui-wrong-container
+          image: pipejet/naro-vorn9061-gitlab-next-ui-wrong:0
+          ports:
+            - containerPort: 3000
